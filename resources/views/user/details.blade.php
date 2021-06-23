@@ -13,12 +13,11 @@
 
     <table border="1" align="center">
     <tr>
-            <th colspan="6">User List</th>
+            <th colspan="5">User List</th>
         </tr>
         <tr>
             <th>ID</th>
             <th>Username</th>
-            <th>Name</th>
             <th>Email</th>
             <th>Type</th>
             <th>Action</th>
@@ -26,7 +25,6 @@
         <tr>
                 <td>{{$user->id}}</td>
                 <td>{{$user->username}}</td>
-                <td>{{$user->name}}</td>
                 <td>{{$user->email}}</td>
                 <td>{{$user->type}}</td>
 

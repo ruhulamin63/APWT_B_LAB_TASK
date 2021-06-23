@@ -16,7 +16,7 @@ class SessionVerify
      */
     public function handle(Request $request, Closure $next)
     {
-        if($request->session()->has('uname')){
+        if($request->session()->has('email')){
             return $next($request);
         }else{
             $request->session()->flash('msg', 'Invalid request');
