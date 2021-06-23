@@ -2,10 +2,18 @@
 
 use Illuminate\Support\Facades\Route;
 
+
+Route::get('/registration', ['as'=>'registration.index', 'uses'=>'RegController@index']);
+Route::post('/registration', 'RegController@insert');
+
+
+
 Route::get('/login', ['as'=>'login.index', 'uses'=>'LoginController@index']);
 Route::post('/login', 'LoginController@verify');
+
 Route::get('/logout', 'LogoutController@index');
 
+//=========================================================================================
 
 Route::group(['middleware'=>['sess']] , function(){
 	
