@@ -14,7 +14,9 @@ class ProductController extends Controller
      */
     public function index()
     {
-        //
+        $users = Product::all();
+
+        return view('product.list')->with('productlist', $users);
     }
 
     /**
@@ -24,7 +26,7 @@ class ProductController extends Controller
      */
     public function create()
     {
-        //
+        return view('product.create');
     }
 
     /**
@@ -33,9 +35,17 @@ class ProductController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Request $req)
     {
-        //
+        $users = new Product;
+
+        $users->product_id = $req->product_id;
+        $users->product_name = $req->product_name;
+        $users->category = $req->category;
+        $users->unit_price = $req->unit_price;
+        $users->save();
+
+        return redirect()->route('product.index');
     }
 
     /**
@@ -46,7 +56,9 @@ class ProductController extends Controller
      */
     public function show(Product $product)
     {
-        //
+        $user = Product::find($product);
+
+        return view('product.details')->with('user', $user);
     }
 
     /**
@@ -57,7 +69,9 @@ class ProductController extends Controller
      */
     public function edit(Product $product)
     {
-        //
+        $users= Product::find($product);
+
+        return view('product.edit')->with('user', $users);
     }
 
     /**
@@ -67,11 +81,28 @@ class ProductController extends Controller
      * @param  \App\Models\Product  $product
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Product $product)
+    public function update(Request $req, Product $product)
     {
-        //
+        $users = Product::find($product);
+        
+        $users->product_id = $req->product_id;
+        $users->product_name = $req->product_name;
+        $users->category = $req->category;
+        $users->unit_price = $req->unit_price;
+        $users->save();
+
+        return redirect()->route('product.index');
     }
 
+// ============================ End Update ====================================
+
+    public function delete(Product $product){
+  
+        $users = Product::find($product);
+        
+        return view('product.delete')->with('user', $users);
+    }
+// ============================ End Delete ====================================
     /**
      * Remove the specified resource from storage.
      *
@@ -80,6 +111,9 @@ class ProductController extends Controller
      */
     public function destroy(Product $product)
     {
-        //
+        $users = Product::find($product);
+        $users->delete();
+
+         return redirect()->route('product.index');
     }
 }

@@ -15,7 +15,7 @@
             <th colspan="6">User List</th>
         </tr>
         <tr>
-            <th>ID</th>
+            <th>Id</th>
             <th>Username</th>
             <th>Name</th>
             <th>Email</th>

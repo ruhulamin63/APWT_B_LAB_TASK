@@ -5,7 +5,7 @@
 </head>
 <body>
 
-	<a href="/user/list"> Back</a> |
+	<a href="/home"> Back</a> |
 	<a href="/login"> Logout </a> 
 
 	<h2>Create New User</h2>

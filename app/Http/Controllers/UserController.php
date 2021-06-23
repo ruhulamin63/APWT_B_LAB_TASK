@@ -51,6 +51,7 @@ class UserController extends Controller
 // ============================ End Edit ====================================
 
     public function update(Request $req, $id){
+        
         $users = Register::find($id);
         
         $users->username = $req->uname;

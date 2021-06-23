@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Create Page</title>
+	<title>Create Product Page</title>
 </head>
 <body>
 
