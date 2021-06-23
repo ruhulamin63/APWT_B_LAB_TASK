@@ -33,9 +33,10 @@
 		<t>
 			<td colspan="2" align="center" width="100%" height="425px">
 				<h1>Welcome to , {{session('email')}}</h1>
-				<a href="{{route('user.create')}}"> Create New </a> |
-        		<a href="{{route('user.index')}}"> User List </a> |
-        		<a href="/logout"> Logout </a> 
+				<a href="{{route('user.create')}}"> Create New User </a> |
+        		<a href="{{route('user.index')}}"> User Information </a> |
+        		<a href="{{route('product.index')}}"> Product Management </a> |
+				
 			</td>
 		</t>
 		<tr height="50px">

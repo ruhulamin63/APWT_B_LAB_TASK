@@ -10,7 +10,7 @@
 
 	<h2>Create New User</h2>
 
-	<form method="post" enctype="multipart/form-data">
+	<form method="post">
 	@csrf
 	<table align="center" border="1">
 		<tr>
@@ -32,10 +32,6 @@
 		<tr>
 			<td>Type</td>
 			<td><input type="text" name="type"></td>
-		</tr>
-		<tr>
-			<td>Image</td>
-			<td><input type="file" name="image"></td>
 		</tr>
 		<tr>
 			<td></td>
