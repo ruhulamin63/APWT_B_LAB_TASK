@@ -3,15 +3,13 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\User;
-use Illuminate\Support\Facades\DB; //Import query builser 
+use App\Models\Register;
 
 class UserController extends Controller
 {
     public function index(){
 
-        // $users = User::all();
-        $users = DB::table('users')->get(); //Query Builder
+         $users = Register::all();
 
         return view('user.list')->with('userlist', $users);
     }
@@ -19,7 +17,7 @@ class UserController extends Controller
 
     public function details($id){
 
-        $user = User::find($id); // Model Query
+        $user = Register::find($id);
 
         return view('user.details')->with('user', $user);
     }
@@ -32,25 +30,7 @@ class UserController extends Controller
 
     public function insert(Request $req){
 
-         $users = new User;
-        
-        // if($req->hasFile('image')){
-        //     $file = $req->file('image');
-
-        //     echo "File Name : ".$file->getClientOriginalName()."<br>";
-        //     echo "File Extension : ".$file->getClientOriginalExtension()."<br>";
-        //     echo "File Mime Type : ".$file->getMimeType()."<br>";
-        //     echo "File Size : ".$file->getSize()."<br>";
-        // }
-
-        $file = $req->file('image');
-        if($file->move('upload', $file->getClientOriginalName())){
-            
-            $users->image = $req->image;
-
-        }else{
-            echo "Error...";
-        }
+         $users = new Register;
 
         $users->username = $req->uname;
         $users->name = $req->name;
@@ -65,13 +45,13 @@ class UserController extends Controller
 
     public function edit($id){
 
-        $users= User::find($id);
+        $users= Register::find($id);
         return view('user.edit')->with('user', $users);
     }
 // ============================ End Edit ====================================
 
     public function update(Request $req, $id){
-        $users = User::find($id);
+        $users = Register::find($id);
         
         $users->username = $req->uname;
         $users->name = $req->name;
@@ -88,7 +68,7 @@ class UserController extends Controller
 
     public function delete($id){
   
-        $users = User::find($id);
+        $users = Register::find($id);
         
         return view('user.delete')->with('user', $users);
     }
@@ -96,37 +76,10 @@ class UserController extends Controller
 
     public function destroy($id){
 
-        $users = User::find($id);
+        $users = Register::find($id);
         $users->delete();
 
          return redirect()->route('user.delete');
     }
 // ============================ End Destroy ====================================
-
-    // public function test(){
-    //     session()->put('uname','Ruhul Amin');
-    //     session()->put('password','123');
-        
-    //     $uname = session()->get('uname');
-    //     $password = session()->get('password');
-    //     $alldata = session()->all();
-
-    //     session()->forget('uname');
-    //     session()->flush();
-    //     $uname = session()->has('uname');
-    //     $uname = session()->pull($alldata);
-
-    //     session()->flash('cgpa','4');
-    //     session()->flash('dept','cse');
-
-    //     $cgpa = session()->get('cgpa');
-
-    //     $uname = session()->keep('cgpa');
-    //     session()->reflash();
-
-    //     return view('login.test')->with('data', $uname);
-    // }
-// =====================================================================================================
-
-
 }

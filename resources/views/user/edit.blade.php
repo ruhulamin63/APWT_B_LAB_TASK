@@ -8,12 +8,13 @@
 	<a href="/user/list"> Back</a> |
 	<a href="/login"> Logout </a> 
 
-	<h2>Update User</h2>
-
 	<form method="post">
 	@csrf
 
 	<table align="center" border="1">
+		<tr>
+            <th colspan="6">Update Information</th>
+        </tr>
         <tr>
 			<td>ID</td>
 			<td><input type="id" name="id" value="{{$user->id}}"></td>
@@ -22,6 +23,10 @@
 			<td>Username</td>
 			<td><input type="text" name="uname" value="{{$user->username}}"></td>
 		</tr>
+		<tr>
+			<td>Name</td>
+			<td><input type="text" name="name" value="{{$user->name}}"></td>
+		</tr
 		<tr>
 			<td>Email</td>
 			<td><input type="email" name="email" value="{{$user->email}}"></td>

@@ -32,7 +32,7 @@
 	<table border="1px" align="center" width="100%">
 		<t>
 			<td colspan="2" align="center" width="100%" height="425px">
-				<h1>Welcome to , {{$user->name}}</h1>
+				<h1>Welcome to , {{session('email')}}</h1>
 				<a href="{{route('user.create')}}"> Create New </a> |
         		<a href="{{route('user.index')}}"> User List </a> |
         		<a href="/logout"> Logout </a> 

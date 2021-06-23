@@ -9,11 +9,13 @@
 <body>
     <a href="/user/list">Back</a> |
 	<a href="/login"> Logout </a> 
-   <h1>Delete Information</h1>
   
    <form method="post">
 		@csrf
         <table align="center" border="1">
+			<tr>
+				<th colspan="6">Delete Information</th>
+			</tr>
 			<tr>
 			    <td>Id</td>
 			    <td>{{$user->id}}</td>
@@ -21,6 +23,10 @@
 		    <tr>
 			    <td>Username</td>
 			    <td>{{$user->username}}</td>
+		    </tr>
+			<tr>
+			    <td>Name</td>
+			    <td>{{$user->name}}</td>
 		    </tr>
 		    <tr>
 			    <td>Email</td>
@@ -30,8 +36,11 @@
 			    <td>Type</td>
 			    <td>{{$user->type}}</td>
 		    </tr>
+			<tr>
+				<td><input type="submit" name="Submit" value="Delete"></td>
+				<td></td>
+			</tr>
 		</table>
-        <input type="submit" name="Submit" value="Delete">
 	</form>
 </body>
 </html>
