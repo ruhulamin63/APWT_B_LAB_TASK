@@ -19,7 +19,9 @@
 							<img src="{{asset('upload/abc.png')}}" width="100%" height="100%">
 						</td>
 						<td align="right"> 
-							Loged in <a href="/home">{{session('uname')}}</a>
+							Loged in <a href="/home">{{session('uname')}}</a> |
+							<a href="/user/list"> Back</a> |
+							<a href="/login"> Logout </a> 
 						</td>
 					</tr>
 				</table>

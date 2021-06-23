@@ -13,7 +13,7 @@
 	<form method="post">
 	@csrf
 
-	<table>
+	<table align="center" border="1">
         <tr>
 			<td>ID</td>
 			<td><input type="id" name="id" value="{{$user->id}}"></td>
@@ -21,10 +21,6 @@
 		<tr>
 			<td>Username</td>
 			<td><input type="text" name="uname" value="{{$user->username}}"></td>
-		</tr>
-		<tr>
-			<td>Name</td>
-			<td><input type="text" name="name" value="{{$user->name}}"></td>
 		</tr>
 		<tr>
 			<td>Email</td>
@@ -35,7 +31,6 @@
 			<td><input type="type" name="type" value="{{$user->type}}"></td>
 		</tr>
 		<tr>
-			<td></td>
 			<td><input type="submit" name="Submit" value="Update"></td>
 		</tr>
 	</table>
