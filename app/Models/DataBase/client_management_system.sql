@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 23, 2021 at 01:41 PM
+-- Generation Time: Jun 23, 2021 at 06:11 PM
 -- Server version: 10.4.17-MariaDB
 -- PHP Version: 8.0.2
 
@@ -66,6 +66,22 @@ CREATE TABLE `customers` (
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `products`
+--
+
+CREATE TABLE `products` (
+  `id` int(20) NOT NULL,
+  `product_id` varchar(30) NOT NULL,
+  `product_name` varchar(30) NOT NULL,
+  `category` varchar(30) NOT NULL,
+  `unit_price` varchar(20) NOT NULL,
+  `cteated_at` date NOT NULL,
+  `updated_at` date NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `registers`
 --
 
@@ -87,16 +103,6 @@ CREATE TABLE `registers` (
 INSERT INTO `registers` (`id`, `username`, `name`, `email`, `password`, `type`, `created_at`, `updated_at`) VALUES
 (1, 'raridoy', 'Ruhul Amin', 'raridoy4@gmail.com', 'needhelp', 'admin', '2021-06-23', '2021-06-23');
 
--- --------------------------------------------------------
-
---
--- Table structure for table `users`
---
-
-CREATE TABLE `users` (
-  `id` int(20) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
 --
 -- Indexes for dumped tables
 --
@@ -114,15 +120,15 @@ ALTER TABLE `customers`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `registers`
+-- Indexes for table `products`
 --
-ALTER TABLE `registers`
+ALTER TABLE `products`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `users`
+-- Indexes for table `registers`
 --
-ALTER TABLE `users`
+ALTER TABLE `registers`
   ADD PRIMARY KEY (`id`);
 
 --
